@@ -12,18 +12,6 @@ import { fifaData } from './fifa.js';
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
 
-// let bigPops = cityData.filter(function(item){
-//   return item.population > 500000;
-// })
-// console.log(bigPops.map(function(item){
-//   return item.city;
-// }));
-// homeTeam2014 = [];
-// const result = fifaData.filter(function(item) {
-//     if(item["Year"] == 2014) {
-//         console.log(item["Home Team Name"]);
-//     } 
-// } 
 
 for(let i=0; i < fifaData.length; i++) {
     let homeTeamName = "";
@@ -36,19 +24,30 @@ for(let i=0; i < fifaData.length; i++) {
     }
 }
 
+// Didn't quite narrow it down to just Germany - but was good practice.
 
 
+const homeTeam2014Final = fifaData.filter(function(item) {
+    // homeTeamName += fifaData[item]["Home Team Name"];
+    // return fifaData[item] === 2014 && fifaData[item] === "Final";
+    return item["Year"] === 2014 && item["Stage"] === "Final";
+});
+
+console.log(homeTeam2014Final);
 
 
 
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
-function getFinals(/* code here */) {
+function getFinals(data) {
 
-    /* code here */
-
+    const finalData = data.filter(function(item) {
+        return item["Stage"] === "Final";
+    }); return finalData;
 };
+console.log("Answer to task 2: ")
+console.log(getFinals(fifaData));
 
 /* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
 
