@@ -31,11 +31,11 @@ for(let i=0; i < fifaData.length; i++) {
         
         homeTeamName += fifaData[i]["Home Team Name"];
 
-        console.log(homeTeamName);
-        // homeTeamName += fifaData[i]["Home Team Name"];
-        // return homeTeamName;
+        console.log(homeTeamName); // returns "Germany" as the home team name for 2014's Final.
+        
     }
 }
+
 
 
 
